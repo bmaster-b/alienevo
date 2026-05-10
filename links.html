@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AlienEvo</title>
+<link rel="icon" type="image/x-icon" href="https://media.forgecdn.net/avatars/thumbnails/1436/254/64/64/638930759595473241_animated.gif">
+<style>
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-image: url("https://media.forgecdn.net/attachments/1199/274/screen1-the_masked_anarchist-and-itzyphron-jpg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  background-image: linear-gradient(to right, rgba(50, 50, 50, 0.8), rgba(0, 255, 0, 0.6));
+  padding: 40px;
+  border-radius: 20px;
+  border: none; 
+  box-shadow: 
+    0 0 20px rgba(0, 0, 0, 0.5),           
+    inset 0 0 0 4px rgba(0, 255, 0, 0.3);  
+  color: white;
+  width: fit-content;
+  position: relative; /* Belangrijk: dit is het anker voor het Discord logo */
+}
+
+a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: underline overline;
+}
+
+a:hover {
+ color: #000000; /* Felgroen bij hover */
+  text-shadow: 0 0 10px #ffffff; /* Geeft een lichtgevend effect */
+  text-decoration: underline overline; /* Houdt de lijnen vast */
+  transition: 0.2s; /* Zorgt voor een zachte overgang */
+}
+
+/* De Discord link die rechts naast de box "plakt" */
+.hoek-logo {
+  position: absolute; 
+  left: 100%;          /* Start aan de rechterbuitenkant van de container */
+  margin-left: 20px;   /* Een klein beetje ruimte tussen de box en het logo */
+  top: 50%;            /* Zet de bovenkant op de helft */
+  transform: translateY(-50%); /* Trekt hem precies naar het midden van de zijkant */
+}
+
+.hoek-logo img {
+  width: 60px;
+  transition: 0.3s;
+}
+
+.hoek-logo img:hover {
+  /* We herhalen de translateY zodat hij niet verspringt */
+  transform: scale(1.2) rotate(10deg); 
+  filter: drop-shadow(0 0 10px #5865F2); /* Geeft het logo een blauwe gloed */
+}
+
+.licentie {
+  margin-top: 25px;      
+  font-size: 14px;       /* Iets kleiner gemaakt voor een betere look */
+  letter-spacing: 1px;   
+  color: red;
+  background-color: black;
+  border-radius: 2px;
+  padding: 5px;
+  display: inline-block; /* Zorgt dat het zwarte vlak niet de hele breedte pakt */
+}
+
+.music-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: black;
+  border: 2px solid lime;
+  color: lime;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background-color: #111;
+  box-shadow: 0 0 20px lime;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>AlienEvo links:</h1>
+    
+    <p>
+      <a href="https://namemc.com/minecraft-skins/tag/ben-10" target="_blank">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAAIVBMVEUAAAC9vb3c3Nzj4+NUVFT///9iYmJeXl74+PjZ2dmBgYEqNIXzAAAANUlEQVR4AWOgKmBUAgMTKJcpFAzCULnhcG4nSLFVmQOUOwFEMYcaQLkKUGrocBmVBGAUNQEASlIVBMl05WsAAAAASUVORK5CYII"
+        style="width: 20px; vertical-align: middle; margin-right: 8px;">
+        Ben 10 Skins!
+      </a>
+    </p>
+
+    <p>
+      <a href="https://www.curseforge.com/minecraft/mc-mods/alienevo/files?page=1&pageSize=20&showAlphaFiles=hide" target="_blank">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABLElEQVR4Ae1VIRCCQBCkJ3uiJ2f0HqM92RPjPzM27cme7EV7sSd6sid7OmDsygadAYTngBcDO3OJ4Xf/bvfemzA6JrBZrl1UewFbClOjnkOXsAvqOKoAINV0GVSEVndbZSaIC16QE/UTyOHK/70ATYyRc7ieVdLgkjQxFPN2eSgQl8G7lf8pxEkvNvgpidQVh3S5aZtIyiILA9kF3DBfZ4vLbi602SGauoC2e66Rmno/sKaTA0rR6mYO525GkB/sp5HdhFmeGufkVhGazoM6X0Be6ASE9yJ/RLRvIknyRCQmiFHf0gHhrNWmc9srhO+VGtH8nXdszMxQXCcS3/o5vvqAiEfTKRl4r3Hj8lrFYZlWV4kf2AQHaftnuLU8DfIxiIAx4LXsUt6ECf+IF32unE4aeJeHAAAAAElFTkSuQmCC" 
+        style="width: 20px; vertical-align: middle; margin-right: 8px;">
+        Curseforge download link!
+      </a>
+    </p>
+
+      <p>
+        <a href="https://modrinth.com/mod/alienevo/versions" target="_blank">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEwAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1wAr1y5h2uSAAAAE3RSTlMADStQd5ZiBRqy7f+GPs7A+OGiqKRB0AAAATlJREFUeAFdklUCBDEIQ6m73v+wS2Cdn8qDDJlC7zDW+RCJUqL/yLHU1lonGiHmH2TcbBKOKNa2nPkq61VQrZaS37zp+c3CBinejcQQiTs8qelgy+WkR7dAuyo7pAbdKw4QciI6wdRMLEvuQCeEI28K6oaYWRZpUI66isRY0rA3+impsFhYwRawo4wyn6qF6vaJDFjtQxkbEt2uqvlokobqdjR2BqcWXq0CwzmDk8MLkudK93wB/4Iqa+KENZtHgbOXrDTkcAW6TsP51RCsnAOyhatVtaI/A+j6+WKqunj1KhhzcqedFZwhdR2JyEorYn6MbMRql+6wizI8308GVp3uZRDK0CJK4ma/svMFrde7YROZq2PyN2C7Hnyo7+8BI/lBGhE2ZjT0HdYvqb6s4yz9h7Gx3xvT19UD48sSzGIY5AQAAAAASUVORK5CYII"
+       style="width: 20px; vertical-align: middle; margin-right: 8px;">
+       Modrinth Download Link!
+      </a>
+     </p>   
+
+<p class="licentie">Also this mod has All Rights Reserved license!</p>
+
+    <!-- Het Discord logo staat nu HIER, binnen de container div -->
+    <a href="https://discord.com/invite/alienevo" target="_blank" class="hoek-logo">
+      <img src="https://media.forgecdn.net/attachments/description/1222749/description_8b5603ef-d24f-4d55-a692-40736707e753.png" alt="Discord Logo">
+    </a>
+
+
+  </div>
+
+<audio id="bg-music" loop>
+  <source src="https://static.wikia.nocookie.net/international-entertainment-project/images/b/b2/Ben_10_%282005%29_-_theme_song_%28English%29.mp3/revision/latest?cb=20231114205634" type="audio/mpeg">
+  Je browser ondersteunt dit audio-element niet.
+</audio>
+
+<button onclick="playMusic()" class="music-btn" style="position: fixed; top: 20px; left: 20px; background: rgba(0,255,0,0.5); border: 2px solid lime; color: white; cursor: pointer; border-radius: 50%; width: 40px; height: 40px; z-index: 9999; display: flex; justify-content: center; align-items: center; padding: 0; line-height: 1;">
+  🎵
+</button>
+
+<script>
+  function playMusic() {
+    var audio = document.getElementById("bg-music");
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }
+</script>
+
+</body>
+</html>
