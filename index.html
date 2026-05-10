@@ -86,7 +86,7 @@ a:hover {
   display: inline-block; 
 }
 
-
+/* Muziekknop styling */
 .music-btn {
   position: fixed;
   top: 20px;
@@ -168,6 +168,7 @@ a:hover {
     </a>
   </div>
 
+  <!-- Audio bestand moet 'music.mp3' heten in je GitHub map -->
   <audio id="bg-music" loop>
     <source src="Ben 10 Main Theme (From _Ben 10_) - Geek Music.mp3" type="audio/mpeg">
     Je browser ondersteunt dit audio-element niet.
@@ -192,18 +193,19 @@ a:hover {
     }
   }
 
+  // Luister naar de audio-data en update de klok
   audio.addEventListener('timeupdate', () => {
     const mins = Math.floor(audio.currentTime / 60);
     const secs = Math.floor(audio.currentTime % 60);
     timeDisplay.innerText = `${mins}:${secs.toString().padStart(2, '0')}`;
   });
 
+  // Reset de klok als de muziek stopt of pauzeert
   audio.addEventListener('pause', () => {
     if (audio.currentTime === 0) {
       timeDisplay.innerText = "0:00";
     }
   });
 </script>
-
 </body>
 </html>
