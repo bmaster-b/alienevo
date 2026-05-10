@@ -41,7 +41,7 @@ body {
     inset 0 0 0 4px rgba(0, 255, 0, 0.3);  
   color: white;
   width: fit-content;
-  position: relative; /* Belangrijk: dit is het anker voor het Discord logo */
+  position: relative;
 }
 
 a {
@@ -51,19 +51,19 @@ a {
 }
 
 a:hover {
- color: #000000; /* Felgroen bij hover */
-  text-shadow: 0 0 10px #ffffff; /* Geeft een lichtgevend effect */
-  text-decoration: underline overline; /* Houdt de lijnen vast */
-  transition: 0.2s; /* Zorgt voor een zachte overgang */
+ color: #000000;
+  text-shadow: 0 0 10px #ffffff; 
+  text-decoration: underline overline; 
+  transition: 0.2s; 
 }
 
-/* De Discord link die rechts naast de box "plakt" */
+
 .hoek-logo {
   position: absolute; 
-  left: 100%;          /* Start aan de rechterbuitenkant van de container */
-  margin-left: 20px;   /* Een klein beetje ruimte tussen de box en het logo */
-  top: 50%;            /* Zet de bovenkant op de helft */
-  transform: translateY(-50%); /* Trekt hem precies naar het midden van de zijkant */
+  left: 100%;          
+  margin-left: 20px;   
+  top: 50%;           
+  transform: translateY(-50%); 
 }
 
 .hoek-logo img {
@@ -72,20 +72,20 @@ a:hover {
 }
 
 .hoek-logo img:hover {
-  /* We herhalen de translateY zodat hij niet verspringt */
+  
   transform: scale(1.2) rotate(10deg); 
-  filter: drop-shadow(0 0 10px #5865F2); /* Geeft het logo een blauwe gloed */
+  filter: drop-shadow(0 0 10px #5865F2); 
 }
 
 .licentie {
   margin-top: 25px;      
-  font-size: 14px;       /* Iets kleiner gemaakt voor een betere look */
+  font-size: 14px;       
   letter-spacing: 1px;   
   color: red;
   background-color: black;
   border-radius: 2px;
   padding: 5px;
-  display: inline-block; /* Zorgt dat het zwarte vlak niet de hele breedte pakt */
+  display: inline-block; 
 }
 
 .music-btn {
@@ -147,7 +147,7 @@ a:hover {
 
 <p class="licentie">Also this mod has All Rights Reserved license!</p>
 
-    <!-- Het Discord logo staat nu HIER, binnen de container div -->
+    
     <a href="https://discord.com/invite/alienevo" target="_blank" class="hoek-logo">
       <img src="https://media.forgecdn.net/attachments/description/1222749/description_8b5603ef-d24f-4d55-a692-40736707e753.png" alt="Discord Logo">
     </a>
@@ -156,14 +156,15 @@ a:hover {
   </div>
 
 <audio id="bg-music" loop>
-  <source src="https://static.wikia.nocookie.net/international-entertainment-project/images/b/b2/Ben_10_%282005%29_-_theme_song_%28English%29.mp3/revision/latest?cb=20231114205634" type="audio/mpeg">
+  <source src="Ben 10 Main Theme (From _Ben 10_) - Geek Music.mp3" type="audio/mpeg">
   Je browser ondersteunt dit audio-element niet.
 </audio>
 
 <button onclick="playMusic()" class="music-btn" style="position: fixed; top: 20px; left: 20px; background: rgba(0,255,0,0.5); border: 2px solid lime; color: white; cursor: pointer; border-radius: 50%; width: 40px; height: 40px; z-index: 9999; display: flex; justify-content: center; align-items: center; padding: 0; line-height: 1;">
   🎵
 </button>
-
+<span id="music-time" style="color: lime; font-family: monospace; position: fixed; top: 65px; left: 20px; z-index: 9999;">0:00</span>
+  
 <script>
   function playMusic() {
     var audio = document.getElementById("bg-music");
@@ -174,6 +175,13 @@ a:hover {
       audio.currentTime = 0;
     }
   }
+
+  audio.ontimeupdate = function() {
+    var mins = Math.floor(audio.currentTime / 60);
+    var secs = Math.floor(audio.currentTime % 60);
+    if (secs < 10) secs = '0' + secs;
+    timeDisplay.innerHTML = mins + ":" + secs;
+  };
 </script>
 
 </body>
