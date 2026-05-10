@@ -168,9 +168,9 @@ a:hover {
     </a>
   </div>
 
-  <!-- Audio bestand moet 'music.mp3' heten in je GitHub map -->
+ 
   <audio id="bg-music" loop>
-    <source src="Ben 10 Main Theme (From _Ben 10_) - Geek Music.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
     Je browser ondersteunt dit audio-element niet.
   </audio>
 
@@ -178,34 +178,36 @@ a:hover {
   <span id="music-time">0:00</span>
   
 <script>
-  const audio = document.getElementById("bg-music");
-  const btn = document.getElementById("play-btn");
-  const timeDisplay = document.getElementById("music-time");
+  window.onload = function() {
+    const audio = document.getElementById("bg-music");
+    const btn = document.getElementById("play-btn");
+    const timeDisplay = document.getElementById("music-time");
 
-  function playMusic() {
-    if (audio.paused) {
-      audio.play();
-      btn.classList.add("playing");
-    } else {
-      audio.pause();
-      audio.currentTime = 0;
-      btn.classList.remove("playing");
-    }
-  }
 
-  // Luister naar de audio-data en update de klok
-  audio.addEventListener('timeupdate', () => {
-    const mins = Math.floor(audio.currentTime / 60);
-    const secs = Math.floor(audio.currentTime % 60);
-    timeDisplay.innerText = `${mins}:${secs.toString().padStart(2, '0')}`;
-  });
+    window.playMusic = function() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.classList.add("playing");
+        }).catch(err => {
+          console.log("Muziek kon niet starten:", err);
+        });
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+        btn.classList.remove("playing");
+        timeDisplay.innerText = "0:00";
+      }
+    };
 
-  // Reset de klok als de muziek stopt of pauzeert
-  audio.addEventListener('pause', () => {
-    if (audio.currentTime === 0) {
-      timeDisplay.innerText = "0:00";
-    }
-  });
+  
+    audio.addEventListener('timeupdate', () => {
+      const mins = Math.floor(audio.currentTime / 60);
+      const secs = Math.floor(audio.currentTime % 60);
+      timeDisplay.innerText = mins + ":" + secs.toString().padStart(2, '0');
+    });
+  };
 </script>
+
+  
 </body>
 </html>
