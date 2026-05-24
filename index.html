@@ -239,7 +239,30 @@ a:hover {
       timeDisplay.innerText = mins + ":" + secs.toString().padStart(2, '0');
     });
   };
+  // --- Link Preview Removal Code ---
+    document.querySelectorAll('.no-preview').forEach(link => {
+      // Temporarily store original href destination
+      const originalUrl = link.getAttribute('href');
+      
+      // Strip href on hover so browser status bar remains blank
+      link.addEventListener('mouseover', function() {
+        this.removeAttribute('href');
+      });
+
+      // Restore href if mouse exits link boundary
+      link.addEventListener('mouseout', function() {
+        this.setAttribute('href', originalUrl);
+      });
+
+      // Navigate to destination on click via background JavaScript
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        window.open(originalUrl, '_blank'); 
+      });
+    });
+  };
 </script>
+
 
   
 </body>
